@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 垂直线性布局：从上到下排列标题、按钮、列表 -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f5f5">
+
+    <!-- 1. 顶部标题栏 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GitHub文件管理器"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:background="#2196F3"
+        android:textColor="#ffffff"/>
+
+    <!-- 2. 添加项目按钮（靠右对齐，点击进入配置页面） -->
+    <Button
+        android:id="@+id/btn_add_project"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加GitHub项目"
+        android:background="#2196F3"
+        android:textColor="#ffffff"
+        android:layout_margin="16dp"
+        android:layout_gravity="end"/> <!-- 按钮靠右 -->
+
+    <!-- 3. 项目列表区域（显示已添加的项目，暂无项目时显示提示） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- 暂无项目提示（列表为空时显示） -->
+        <TextView
+            android:id="@+id/tv_empty_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无已添加的项目，点击右上角按钮添加"
+            android:textSize="16sp"
+            android:textColor="#999999"
+            android:visibility="visible"/> <!-- 默认显示 -->
+
+        <!-- 项目列表（后续用代码动态添加项目，初始隐藏） -->
+        <LinearLayout
+            android:id="@+id/ll_project_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"> <!-- 默认隐藏 -->
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
